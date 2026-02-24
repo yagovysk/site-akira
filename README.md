@@ -16,6 +16,16 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Environment
+
+Set the public site URL used by SEO metadata, canonical links, JSON-LD, `robots.txt`, and `sitemap.xml`:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://www.churraskimdoakira.com.br
+```
+
+You can change it in `.env.local` for local/dev and keep `.env.example` as reference.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 ## Learn More

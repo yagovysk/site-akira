@@ -5,13 +5,29 @@ import WhatsAppCTA from "@/components/WhatsAppCTA";
 import LocationMap from "@/components/LocationMap";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import GallerySection from "@/components/GallerySection";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title:
-    "Churraskim do Akira | Restaurante Japonês e Churrasco em Vicente Pires",
+    "Restaurante Japonês e Churrasco em Vicente Pires",
   description:
     "Espetinhos na brasa com toque de culinária japonesa em Vicente Pires, Brasília. Fliperama retrô, ambiente familiar e atendimento acolhedor.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Churraskim do Akira em Vicente Pires",
+    description:
+      "Cardápio com churrasco e culinária japonesa, ambiente familiar e fliperama retrô em Brasília.",
+    url: "/",
+    type: "website",
+    images: [
+      {
+        url: "/images/logo-akira.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Logo Churraskim do Akira",
+      },
+    ],
+  },
 };
 
 export default function Home() {
@@ -25,7 +41,7 @@ export default function Home() {
         <section className="py-12 sm:py-16">
           <SectionTitle>Prova Social</SectionTitle>
           <div className="mt-4 rounded-2xl border border-yellow-400/40 bg-black/70 p-5 shadow-lg">
-            <p className="text-white font-semibold text-lg">⭐ 4,8 no Google</p>
+            <p className="text-white font-semibold text-lg">⭐ 5,0 no Google</p>
             <p className="text-sm text-gray-300 mt-1">
               Avaliação média dos clientes que visitam o Churraskim do Akira.
             </p>
@@ -86,14 +102,6 @@ export default function Home() {
               </h3>
               <p className="text-sm text-gray-300 mt-2">
                 12 espetinhos variados + 2 porções para compartilhar.
-              </p>
-            </article>
-            <article className="rounded-2xl bg-black/70 border border-red-900/60 p-5 shadow-lg transition-transform duration-300 hover:-translate-y-1">
-              <h3 className="font-semibold text-yellow-400 text-lg">
-                Combo + Fliperama
-              </h3>
-              <p className="text-sm text-gray-300 mt-2">
-                8 espetinhos + 1 bebida + fichas para curtir no arcade.
               </p>
             </article>
           </div>

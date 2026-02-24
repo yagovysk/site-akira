@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --a11y-font-scale: 1;
+}
+
 .reveal-scroll {
   transition:
     opacity 500ms ease,
@@ -36,6 +40,34 @@
   animation: gallery-float 5.5s ease-in-out infinite;
 }
 
+.menu-category-shell {
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease,
+    border-color 280ms ease;
+}
+
+.menu-category-shell:hover {
+  transform: translateY(-2px);
+  border-color: rgba(250, 204, 21, 0.55);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.42);
+}
+
+.menu-item-card {
+  transition:
+    transform 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms ease;
+}
+
+.price-chip {
+  animation: price-pop 2.8s ease-in-out infinite;
+}
+
+.badge-pulse {
+  animation: badge-pulse 2.4s ease-in-out infinite;
+}
+
 .gallery-card:nth-child(2n) {
   animation-duration: 6.2s;
 }
@@ -61,6 +93,32 @@
   animation: gallery-shine 900ms ease;
 }
 
+.gallery-image-out {
+  animation: gallery-transmit-out 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gallery-image-in {
+  animation: gallery-transmit-in 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.game-modal-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(250, 204, 21, 0.05) 0px,
+    rgba(250, 204, 21, 0.05) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+}
+
+.game-modal-enter {
+  animation: game-pop 260ms steps(6, end);
+}
+
 @keyframes gallery-float {
   0%,
   100% {
@@ -80,6 +138,70 @@
   }
 }
 
+@keyframes gallery-transmit-out {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+    filter: blur(0) brightness(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.94) translate3d(-8%, 0, 0);
+    filter: blur(2px) brightness(1.25);
+  }
+}
+
+@keyframes gallery-transmit-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.06) translate3d(8%, 0, 0);
+    filter: blur(3px) brightness(1.35);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+    filter: blur(0) brightness(1);
+  }
+}
+
+@keyframes game-pop {
+  0% {
+    transform: scale(0.74);
+    opacity: 0;
+    filter: blur(4px) brightness(1.4);
+  }
+  60% {
+    transform: scale(1.04);
+    opacity: 1;
+    filter: blur(0px) brightness(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes price-pop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes badge-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(250, 204, 21, 0);
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -91,6 +213,7 @@ html {
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
+  font-size: calc(16px * var(--a11y-font-scale));
 }
 
 body {
@@ -102,6 +225,63 @@ body {
   max-width: 100%;
   background: #000;
   color: #fff;
+  transition:
+    filter 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease,
+    font-size 180ms ease;
+}
+
+.site-shell.a11y-light-soft {
+  background: white;
+  color: black;
+  filter: invert(1) hue-rotate(180deg) saturate(0.74) brightness(1.05);
+}
+
+.site-shell.a11y-light-soft img,
+.site-shell.a11y-light-soft video,
+.site-shell.a11y-light-soft iframe,
+.site-shell.a11y-light-soft canvas,
+.site-shell.a11y-light-soft svg {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.site-shell.a11y-high-contrast {
+  background: black !important;
+  color: white !important;
+}
+
+.site-shell.a11y-high-contrast * {
+  text-shadow: none !important;
+}
+
+.a11y-widget-light .a11y-widget-trigger {
+  background: white;
+  color: black;
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.a11y-widget-light .a11y-widget-panel {
+  background: white;
+  border-color: rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.a11y-widget-light .a11y-widget-panel h3,
+.a11y-widget-light .a11y-widget-panel p,
+.a11y-widget-light .a11y-widget-panel span,
+.a11y-widget-light .a11y-widget-panel button {
+  color: black !important;
+}
+
+.site-shell.a11y-high-contrast a,
+.site-shell.a11y-high-contrast button,
+.site-shell.a11y-high-contrast [role="button"],
+.site-shell.a11y-high-contrast input,
+.site-shell.a11y-high-contrast select,
+.site-shell.a11y-high-contrast textarea {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
 }
 
 img,
@@ -118,7 +298,11 @@ svg {
   .reveal-visible,
   .gallery-card,
   .gallery-shine,
-  .gallery-card:hover .gallery-shine {
+  .gallery-card:hover .gallery-shine,
+  .menu-category-shell,
+  .menu-item-card,
+  .price-chip,
+  .badge-pulse {
     transition: none;
     transform: none;
     filter: none;
