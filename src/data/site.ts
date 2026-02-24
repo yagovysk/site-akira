@@ -1,17 +1,19 @@
 export const site = {
   name: "Churraskim do Akira",
-  address: "Rua 10, Chácara 200, Vicente Pires",
+  address: "Rua Chácara 83, 3 - Lote 8 Loja 4",
   city: "Brasília",
   state: "DF",
-  zip: "72000-000",
-  whatsapp: "https://wa.link/akira",
+  zip: "72005-760",
+  whatsapp: "https://wa.me/5561996730642",
   instagram: "https://instagram.com/churraskimdoakira",
   hours: "Terça a Domingo: 11h às 23h",
-  map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.123456789!2d-48.000000!3d-15.800000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3b00000000%3A0x0000000000000000!2sChurraskim+do+Akira!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr",
-  phone: "(61) 99999-9999",
+  map: "https://www.google.com/maps?q=Churraskim+do+Akira+e+Restaurante,+Rua+Ch%C3%A1cara+83,+3+-+Lote+8+Loja+4,+Bras%C3%ADlia+-+DF,+72005-760&output=embed",
+  mapsDirections:
+    "https://www.google.com/maps/dir//Churraskim+do+Akira+e+Restaurante,+Rua,+Ch%C3%A1cara+83,+3+-+Lote+8+Loja+4,+Bras%C3%ADlia+-+DF,+72005-760/@-15.7215488,-47.9373578,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x935a331002b621bb:0x7c4f797823c5f823!2m2!1d-48.012292!2d-15.812669?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D",
+  phone: "(61) 99673-0642",
   geo: {
-    lat: -15.8,
-    lng: -48.0,
+    lat: -15.812669,
+    lng: -48.012292,
   },
   priceRange: "$$",
   description:

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import Image from "next/image";
+import { site } from "@/data/site";
 export default function Hero() {
   return (
     <section className="py-10 sm:py-16">
@@ -33,7 +34,7 @@ export default function Hero() {
             Ver Cardápio
           </Link>
           <a
-            href="https://wa.link/akira"
+            href={site.whatsapp}
             target="_blank"
             rel="noopener"
             className="bg-green-500 hover:bg-green-600 text-black font-bold px-6 py-3 rounded shadow transition-all text-sm sm:text-base w-full sm:w-auto"

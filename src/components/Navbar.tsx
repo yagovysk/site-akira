@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { site } from "@/data/site";
 
 export default function Navbar() {
   return (
@@ -7,7 +8,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 sm:py-4 w-full min-w-0">
         <Link
           href="/"
-          className="flex items-center gap-2 min-w-0"
+          className="flex items-center gap-2 min-w-0 max-w-[58%] sm:max-w-none"
           aria-label="Página inicial do Churraskim do Akira"
         >
           <Image
@@ -18,7 +19,7 @@ export default function Navbar() {
             className="rounded-full shadow-md border-2 border-yellow-400 bg-black w-12 h-12 sm:w-16 sm:h-16 object-cover"
             priority
           />
-          <span className="font-bold text-sm sm:text-base text-white">
+          <span className="font-bold text-xs sm:text-base text-white truncate">
             Churraskim do Akira
           </span>
         </Link>
@@ -36,7 +37,7 @@ export default function Navbar() {
             Onde Estamos
           </Link>
           <a
-            href="https://wa.link/akira"
+            href={site.whatsapp}
             target="_blank"
             rel="noopener"
             className="bg-green-500 hover:bg-green-600 text-black px-3 py-1 rounded shadow font-bold ml-2 transition-all"
@@ -44,18 +45,18 @@ export default function Navbar() {
             WhatsApp
           </a>
         </div>
-        <div className="md:hidden flex items-center gap-2">
+        <div className="md:hidden flex items-center gap-1.5">
           <Link
             href="/cardapio"
-            className="text-xs font-semibold hover:text-yellow-400 transition-colors"
+            className="text-[11px] font-semibold hover:text-yellow-400 transition-colors px-1"
           >
             Cardápio
           </Link>
           <a
-            href="https://wa.link/akira"
+            href={site.whatsapp}
             target="_blank"
             rel="noopener"
-            className="bg-green-500 hover:bg-green-600 text-black px-3 py-1 rounded shadow font-bold transition-all text-xs"
+            className="bg-green-500 hover:bg-green-600 text-black px-2.5 py-1 rounded shadow font-bold transition-all text-[11px]"
             aria-label="WhatsApp Akira"
           >
             WhatsApp

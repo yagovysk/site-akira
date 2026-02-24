@@ -2,12 +2,20 @@ import SectionTitle from "@/components/SectionTitle";
 import LocationMap from "@/components/LocationMap";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import { site } from "@/data/site";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Onde Estamos | Churraskim do Akira",
+export const metadata: Metadata = {
+  title: "Onde Estamos",
   description:
     "Veja o endereço, mapa, horários e contatos do Churraskim do Akira em Vicente Pires, Brasília.",
   alternates: { canonical: "/onde-estamos" },
+  openGraph: {
+    title: "Onde Estamos | Churraskim do Akira",
+    description:
+      "Endereço, mapa, horário de funcionamento e contato do restaurante em Vicente Pires.",
+    url: "/onde-estamos",
+    type: "website",
+  },
 };
 
 export default function OndeEstamosPage() {
@@ -44,6 +52,15 @@ export default function OndeEstamosPage() {
               <br />
               <a href={site.instagram} className="text-pink-400 hover:underline">
                 Instagram
+              </a>
+              <br />
+              <a
+                href={site.mapsDirections}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-400 hover:underline"
+              >
+                Como chegar no Google Maps
               </a>
             </div>
           </div>
