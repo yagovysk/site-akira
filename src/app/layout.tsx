@@ -65,6 +65,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "L6Y6Sby_XlHEUMToZYAcwNCLejk51LXX2xzu-3t0Y38",
+  },
   icons: {
     icon: "/images/logo-akira.jpg",
     apple: "/images/logo-akira.jpg",
