@@ -68,6 +68,27 @@
   animation: badge-pulse 2.4s ease-in-out infinite;
 }
 
+.animate-flame {
+  display: inline-block;
+  animation: flame-flicker 1.2s ease-in-out infinite;
+}
+
+.pixel-blink {
+  animation: pixel-blink 1.8s steps(2, end) infinite;
+}
+
+.hero-cta {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    filter 220ms ease;
+}
+
+.hero-cta:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
 .gallery-card:nth-child(2n) {
   animation-duration: 6.2s;
 }
@@ -199,6 +220,36 @@
   }
   50% {
     box-shadow: 0 0 0 6px rgba(250, 204, 21, 0);
+  }
+}
+
+@keyframes flame-flicker {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: translateY(-1px) scale(1.08);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes pixel-blink {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow:
+      0 0 0 rgba(0, 0, 0, 0),
+      0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% {
+    opacity: 0.94;
+    text-shadow:
+      1px 0 0 rgba(255, 60, 0, 0.6),
+      -1px 0 0 rgba(37, 211, 102, 0.35);
   }
 }
 
